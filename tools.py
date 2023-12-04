@@ -7,14 +7,14 @@ from langchain.vectorstores import Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
 from langchain.tools.ifttt import IFTTTWebhook
-
+import os
 from wolfram import *
 import dotenv
 
 dotenv.load_dotenv()
 
 
-serp_api_key = os.environ["SERP_API_KEY"]
+serp_api_key = st.secrets["SERP_API_KEY"]
 
 
 # vector databasea and classes

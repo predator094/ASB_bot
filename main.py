@@ -7,12 +7,10 @@ from langchain.callbacks import get_openai_callback
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 import time
 from tools import *
-import dotenv
-
-dotenv.load_dotenv()
+import os
 
 
-api_key = os.environ["OPENAI_API_KEY"]
+api_key = st.secrets["OPENAI_API_KEY"]
 # setting entrypoint page
 st.set_page_config(
     page_title="Namaskar",

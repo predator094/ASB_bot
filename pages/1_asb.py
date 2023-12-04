@@ -10,12 +10,14 @@ from docx import Document
 from langchain.output_parsers import CommaSeparatedListOutputParser
 from tools import *
 import time
+import os
 
+api_key = st.secrets["OPENAI_API_KEY"]
 # page setter
 st.set_page_config(page_title="Assignment Asolver Bot", page_icon="📝")
 
 # llm
-llm = OpenAI(temperature=0, verbose=True, max_tokens=-1)
+llm = OpenAI(temperature=0, verbose=True, max_tokens=-1, api_key=api_key)
 # agents
 agent_executor = initialize_agent(
     tools=tools,
