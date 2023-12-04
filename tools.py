@@ -24,7 +24,7 @@ pinecone.init(
     environment="gcp-starter",
 )
 index_name = "quad"  # ipcbot
-embeddings = OpenAIEmbeddings()
+embeddings = OpenAIEmbeddings(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 # vector databases class
