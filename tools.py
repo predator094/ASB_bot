@@ -7,6 +7,7 @@ from langchain.vectorstores import Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
 from langchain.tools.ifttt import IFTTTWebhook
+from tree import *
 import os
 from wolfram import *
 import dotenv
@@ -64,9 +65,9 @@ tools = [
         description="useful when you need to programmatically access Google's search results, perform custom web searches, or integrate Google search capabilities into your application, website, or research project. It provides access to structured search data, enabling a wide range of applications, from enhancing search functionality to collecting competitive intelligence and monitoring online content.",
     ),
     Tool(
-        name="map",
-        func=tele.run,
-        description="Send a location to the users device with a location",
+        name="Graphviz",
+        func=graph.generate_and_render_graph,
+        description="The generate_and_render_graph method in the GraphGenerator class generates and renders graphs using Graphviz based on provided DOT code, allowing users to create customizable visual representations of relationships and structures. Only be used when you need to visualize DOT code and not for mathematical graphs.",
     ),
     Tool(
         name="DBMS_book",
@@ -76,6 +77,6 @@ tools = [
     Tool(
         name="Wolfram_alpha",
         func=wolfram.run,
-        description="Useful when needed to do any mathematics , question regarding science and technology , society and culture or everyday life ",
+        description="The WolframAlphaAPIWrapper provides access to the Wolfram Alpha API, which is a computational knowledge engine that can answer a wide range of questions and provide detailed information on various topics. It can provide answers to mathematical, scientific, historical, and general knowledge questions. Additionally, it can generate image representations like graphs for trignometry and statistics based on the input data.",
     ),
 ]

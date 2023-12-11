@@ -73,6 +73,7 @@ if prompt := st.chat_input("What is up?"):
             print(cb)
 
         assistant_response = a
+        print(a)
         # Simulate stream of response with milliseconds delay
         for chunk in assistant_response.split(" "):
             full_response += chunk + " "

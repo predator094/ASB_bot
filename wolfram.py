@@ -1,5 +1,4 @@
 import os
-from langchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
 import requests
 import wolframalpha
 import streamlit as st
@@ -28,7 +27,7 @@ class execute:
         data = {}
         res = self.client.query(query)
         if res["@success"] == False:
-            st.write("no info   ")
+            return "no information found"
         # for p in res.pods:
         #     for s in p.subpods:
         #         img = link_to_image(s.img["@src"])
