@@ -17,9 +17,8 @@ import json
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
     key_dict = json.loads(st.secrets["textkey"])
-    cred = firebase_admin.service_account.Credentials.from_service_account_info(
-        key_dict
-    )
+    # Use credentials.Certificate instead of Credentials.from_service_account_info
+    cred = credentials.Certificate(key_dict)
     firebase_admin.initialize_app(
         cred, {"storageBucket": "hth-project-10dec.appspot.com"}
     )
