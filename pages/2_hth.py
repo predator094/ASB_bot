@@ -222,7 +222,7 @@ def delete_old_files():
         # Check if more than 24 hours have passed since upload
         time_difference = current_time - folder.get("upload_time")
         print(f"Time difference: {time_difference.total_seconds()}")
-        if time_difference.total_seconds() > 60:
+        if time_difference.total_seconds() > 150:
             print(f"Deleting old folder: {folder.id}")
 
             # Delete folder entry from Firestore
