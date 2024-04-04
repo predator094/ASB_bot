@@ -30,11 +30,11 @@ db = firestore.client()
 
 
 def generate_password_and_folder_name():
-    # Define the characters to be used in the password
-    characters = string.ascii_letters + string.digits + string.punctuation
+    # Define the characters to be used in the password (only digits)
+    characters = string.digits
 
-    # Generate a random password of length 16
-    password = "".join(random.choice(characters) for _ in range(16))
+    # Generate a random password of length 6
+    password = "".join(random.choice(characters) for _ in range(6))
 
     # Use MD5 hash function to generate a hash
     hashed_pass = hashlib.md5(password.encode()).hexdigest()
